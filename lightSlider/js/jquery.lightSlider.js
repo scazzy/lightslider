@@ -33,7 +33,7 @@
         currentPagerPosition: 'middle',
         swipeThreshold: 40,
         onBeforeStart: function () {},
-        onSliderLoad: function () {},
+        onSliderLoad: function ($el) {},
         onBeforeSlide: function () {},
         onAfterSlide: function () {},
         onBeforeNextSlide: function () {},
@@ -243,7 +243,7 @@
                     $slide.after('<ul class="csPager ' + cl + '"></ul>');
                     refresh.createPager();
                 }
-                settings.onSliderLoad.call(this);
+                settings.onSliderLoad.call(this,$el);
             },
             active: function (ob, t) {
                 if (this.doCss() && settings.mode === "fade") {
